@@ -11,13 +11,13 @@ Resource    ../resources/variables/variables.robot  # Import the variables from 
 *** Variables ***
 ${SCHEMA_FILE}    resources/schema/card/getCard.json
 ${SCHEMA_FILE_POST_METHOD}      resources/schema/card/addCard.json
-${ALL_PRODUCT_URL}     users
+${ALL_PRODUCT_URL}     carts
 ${SINGLEPRODUCT_ENDPOINT}     /1
 ${LIMIT_ENDPOINT}       ?limit=
 ${LIMITPRODUCT_ENDPOINT}     ?limit=5
 ${SORTDESC_ENDPOINT}     ?sort=desc
 ${SORTASC_ENDPOINT}     ?sort=asc
-${SORTPRODUCT_ENDPOINT}     ?sort=desc
+${SORTPRODUCT_ENDPOINT}     ?sort=
 
 
 @{LOOP_GET_ENDPOINTS_METHOD}        ${ALL_PRODUCT_URL}      ${ALL_PRODUCT_URL}${SINGLEPRODUCT_ENDPOINT}     ${ALL_PRODUCT_URL}${LIMIT_ENDPOINT}     ${ALL_PRODUCT_URL}${SORTPRODUCT_ENDPOINT}
@@ -136,7 +136,7 @@ Test Update New Product with PUT
 
 Test Update New Product with PATCH
     ${userid}=        Evaluate    3
-    ${card_id}=        Evaluate    10
+    ${card_id}=        Evaluate    4
     ${response}=   Add Update Delete Card      ${BASE_URL}${ALL_PRODUCT_URL}/${card_id}     PATCH       ${userid}
     # Add condition to check response type and perform action
     Validate Response Schema Post Method        ${response}       ${SCHEMA_FILE_POST_METHOD}

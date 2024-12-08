@@ -296,6 +296,7 @@ def is_date_within_range(url, start_date, end_date):
         response_data = response.json()
 
         for card in response_data:
+            print(card)
             response_date_obj = (datetime.strptime(card['date'], "%Y-%m-%dT%H:%M:%S.%fZ"))
             print('start_date_obj',start_date_obj)
             print('end_date_obj',end_date_obj)
