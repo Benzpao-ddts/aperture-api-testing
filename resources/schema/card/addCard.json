@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for the record"
+    },
+    "userId": {
+      "type": "integer",
+      "description": "User ID associated with the record"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the record in YYYY-MM-DD format"
+    },
+    "products": {
+      "type": "array",
+      "description": "List of products",
+      "items": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "description": "Unique identifier for the product"
+          },
+          "quantity": {
+            "type": "integer",
+            "description": "Quantity of the product"
+          }
+        },
+        "required": ["productId", "quantity"]
+      }
+    }
+  },
+  "required": ["id", "userId", "date", "products"]
+}

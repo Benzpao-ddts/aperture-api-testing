@@ -1,0 +1,47 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "Unique identifier for the item"
+      },
+      "title": {
+        "type": "string",
+        "description": "Title of the product"
+      },
+      "price": {
+        "type": "number",
+        "description": "Price of the product"
+      },
+      "description": {
+        "type": "string",
+        "description": "Description of the product"
+      },
+      "category": {
+        "type": "string",
+        "description": "Category of the product"
+      },
+      "image": {
+        "type": "string",
+        "description": "Image URL or filename of the product"
+      },
+      "rating": {
+        "type": "object",
+        "properties": {
+          "rate": {
+            "type": "number",
+            "description": "Rating score of the product"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of ratings received"
+          }
+        },
+        "required": ["rate", "count"]
+      }
+    },
+    "required": ["id", "title", "price", "description", "category", "image", "rating"]
+  }
+}

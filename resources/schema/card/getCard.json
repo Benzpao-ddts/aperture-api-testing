@@ -1,0 +1,44 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "Unique identifier for the order"
+      },
+      "userId": {
+        "type": "integer",
+        "description": "User identifier who placed the order"
+      },
+      "date": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Date and time when the order was placed"
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "integer",
+              "description": "Unique identifier for the product"
+            },
+            "quantity": {
+              "type": "integer",
+              "description": "Quantity of the product ordered"
+            }
+          },
+          "required": ["productId", "quantity"]
+        },
+        "description": "List of products included in the order"
+      },
+      "__v": {
+        "type": "integer",
+        "description": "Version key, typically used for internal tracking"
+      }
+    },
+    "required": ["id", "userId", "date", "products", "__v"]
+  }
+}

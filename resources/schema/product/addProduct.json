@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for the product"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the product"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price of the product"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the product"
+    },
+    "image": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the product image"
+    },
+    "category": {
+      "type": "string",
+      "description": "Category of the product"
+    }
+  },
+  "required": ["id", "title", "price", "description", "image", "category"]
+}

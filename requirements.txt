@@ -1,0 +1,6 @@
+requests
+jsonschema
+robotframework
+robotframework-requests
+robotframework-jsonschemalibrary
+robotframework-jsonlibrary
